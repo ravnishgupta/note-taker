@@ -1,3 +1,5 @@
+const { json } = require("express");
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -26,6 +28,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
+  //console.log('getnotes')
   fetch('/api/notes', {
     method: 'GET',
     headers: {
@@ -119,6 +122,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+  //console.log('j', jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -174,10 +178,12 @@ const renderNoteList = async (notes) => {
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
+  //alert('listerns')
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
+console.log('loaded')
 getAndRenderNotes();
