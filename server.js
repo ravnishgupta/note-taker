@@ -1,9 +1,9 @@
 const PORT = process.env.PORT || 3001;
-//const { animals } = require('./data/animals');
+const notes = require('./Develop/db/db.json')
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-//const { SourceMap } = require('module');
+const { SourceMap } = require('module');
 
 const app = express()
 // parse incoming string or array data
@@ -21,7 +21,8 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('/api/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './develop/db/db.json'));
+    res.json(notes);
+    //sendFile(path.join(__dirname, './develop/db/db.json'));
   });
 
 app.get('*', (req, res) => {

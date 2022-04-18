@@ -27,14 +27,27 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-const getNotes = () =>
+const getNotes = () => {
+  let queryURL = '/api/notes';
+  console.log(queryURL);
   //console.log('getnotes')
   fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
+  }).then(response => {
+    if (!response.ok) {
+      return alert('Error: ' + response.statusText);
+    }
+    //return response.json();
+  })
+  .then(savedNotes => {
+    console.log(savedNotes);
+    //printResults(animalData);
   });
+
+}
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -122,7 +135,6 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  //console.log('j', jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -185,5 +197,5 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-console.log('loaded')
+
 getAndRenderNotes();
