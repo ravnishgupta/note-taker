@@ -1,3 +1,6 @@
+// import fs from "fs";
+// import { join } from "path";
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -71,6 +74,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
+  
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -180,4 +184,7 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
+
+
 getAndRenderNotes();
+

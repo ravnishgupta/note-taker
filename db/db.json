@@ -1,11 +1,16 @@
-[
+{
+  "notesArray": [
     {
-        "title":"Test Title",
-        "text":"Test text"
+      "title": "Test Title",
+      "text": "Test text"
     },
-
     {
-        "title":"Rav",
-        "text":"Gupta"
+      "title": "Rav",
+      "text": "Gupta"
+    },
+    {
+      "title": "afdadf",
+      "text": "asdfdsaff"
     }
-]
+  ]
+}
