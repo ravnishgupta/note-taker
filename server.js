@@ -1,5 +1,5 @@
 const PORT = process.env.PORT || 3001;
-const notes = require('./db/db.json')
+const notes = require('./db/db.json');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -13,17 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
 
-// router.post('/animals', (req, res) => {
-//     // set id based on what the next index of the array will be
-//     req.body.id = animals.length.toString();
-  
-//     if (!validateAnimal(req.body)) {
-//       res.status(400).send('The animal is not properly formatted.');
-//     } else {
-//       const animal = createNewAnimal(req.body, animals);
-//       res.json(animal);
-//     }
-//   });
 
 app.post('/api/notes', (req, res) => {
     const note = saveNewNote(req.body, notes);
