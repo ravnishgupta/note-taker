@@ -1,16 +1,27 @@
-{
-  "notesArray": [
-    {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Rav",
-      "text": "Gupta"
-    },
-    {
-      "title": "afdadf",
-      "text": "asdfdsaff"
-    }
-  ]
-}
+[
+  {
+    "title": "Test Title",
+    "text": "Test text",
+    "id": 1
+  },
+  {
+    "title": "Rav",
+    "text": "Gupta",
+    "id": 2
+  },
+  {
+    "title": "adsdf",
+    "text": "asdfas",
+    "id": 3
+  },
+  {
+    "title": "fasfd",
+    "text": "dfa",
+    "id": 4
+  },
+  {
+    "title": "fadf",
+    "text": "fffff",
+    "id": "da67ad26-5628-4a67-84f3-58adb9b55b2e"
+  }
+]

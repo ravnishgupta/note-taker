@@ -1,6 +1,3 @@
-// import fs from "fs";
-// import { join } from "path";
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -54,8 +51,9 @@ const deleteNote = (id) =>
   });
 
 const renderActiveNote = () => {
-  hide(saveNoteBtn);
 
+  hide(saveNoteBtn);
+  
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
