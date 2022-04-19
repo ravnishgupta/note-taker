@@ -1,5 +1,3 @@
-//const { json } = require("express");
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -27,27 +25,13 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-const getNotes = () => {
-  let queryURL = '/api/notes';
-  console.log(queryURL);
-  //console.log('getnotes')
+const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(response => {
-    if (!response.ok) {
-      return alert('Error: ' + response.statusText);
-    }
-    return response.json();
-  })
-  // .then(savedNotes => {
-  //   console.log(savedNotes);
-  //   //printResults(animalData);
-  // });
-
-}
+  });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -188,15 +172,12 @@ const renderNoteList = async (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
-//const getAndRenderNotes = () => getNotes()
 
 if (window.location.pathname === '/notes') {
-  //alert('listerns')
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-
-getAndRenderNotes;
+getAndRenderNotes();
