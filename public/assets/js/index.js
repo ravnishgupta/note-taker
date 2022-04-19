@@ -64,6 +64,7 @@ const renderActiveNote = () => {
     noteText.removeAttribute('readonly');
     noteTitle.value = '';
     noteText.value = '';
+    noteTitle.focus();
   }
 };
 

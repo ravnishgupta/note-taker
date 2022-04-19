@@ -25,6 +25,8 @@ const saveNewNote = (body, notesArray) => {
       return notesArray;
   }
 
+  //const editNote = (id, notes)
+
 module.exports = {
     saveNewNote,
     deleteNote };

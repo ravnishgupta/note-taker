@@ -3,5 +3,10 @@
     "title": "First Note",
     "text": "First note text\n",
     "id": "b77fa991-2fcd-41ab-bb83-583a4252ab13"
+  },
+  {
+    "title": "Second note",
+    "text": "second note text",
+    "id": "c3e7f060-e24b-4195-9382-56aa628f3c91"
   }
 ]

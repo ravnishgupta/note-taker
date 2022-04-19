@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { SourceMap } = require('module');
 const { saveNewNote, deleteNote } = require('./public/assets/js/notes');
+const { application } = require('express');
 
 
 const app = express()
@@ -35,7 +36,8 @@ app.delete('/api/notes/:id', (req, res) => {
     const updatedNotes = deleteNote(req.params.id, notes)
     res.json(updatedNotes);
 
-}) 
+}); 
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
