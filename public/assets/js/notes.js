@@ -14,7 +14,17 @@ const saveNewNote = (body, notesArray) => {
   }
 
   const deleteNote = (id, notesArray) => {
-
+      const index = notesArray.findIndex(object => {
+          return object.id == id;
+      })
+      notesArray.splice(index, 1)
+      fs.writeFileSync(
+        path.join(__dirname, '../../../db/db.json'),
+        JSON.stringify(notesArray, null, 2)
+      );
+      return notesArray;
   }
 
-module.exports = saveNewNote
+module.exports = {
+    saveNewNote,
+    deleteNote };

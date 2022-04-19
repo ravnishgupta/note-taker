@@ -1,27 +1,7 @@
 [
   {
-    "title": "Test Title",
-    "text": "Test text",
-    "id": 1
-  },
-  {
-    "title": "Rav",
-    "text": "Gupta",
-    "id": 2
-  },
-  {
-    "title": "adsdf",
-    "text": "asdfas",
-    "id": 3
-  },
-  {
-    "title": "fasfd",
-    "text": "dfa",
-    "id": 4
-  },
-  {
-    "title": "fadf",
-    "text": "fffff",
-    "id": "da67ad26-5628-4a67-84f3-58adb9b55b2e"
+    "title": "First Note",
+    "text": "First note text\n",
+    "id": "b77fa991-2fcd-41ab-bb83-583a4252ab13"
   }
 ]
