@@ -1,4 +1,4 @@
-const { json } = require("express");
+//const { json } = require("express");
 
 let noteTitle;
 let noteText;
@@ -40,12 +40,12 @@ const getNotes = () => {
     if (!response.ok) {
       return alert('Error: ' + response.statusText);
     }
-    //return response.json();
+    return response.json();
   })
-  .then(savedNotes => {
-    console.log(savedNotes);
-    //printResults(animalData);
-  });
+  // .then(savedNotes => {
+  //   console.log(savedNotes);
+  //   //printResults(animalData);
+  // });
 
 }
 
@@ -188,6 +188,7 @@ const renderNoteList = async (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
+//const getAndRenderNotes = () => getNotes()
 
 if (window.location.pathname === '/notes') {
   //alert('listerns')
@@ -198,4 +199,4 @@ if (window.location.pathname === '/notes') {
 }
 
 
-getAndRenderNotes();
+getAndRenderNotes;
